@@ -88,8 +88,8 @@ Now we setup z3 solver links
 
 ## Install dreal prerequisities
 >> cd ../Ibex
->> tar xvfz ibex-2.8.8.tar.gz
->> cd ibex-2.8.8
+>> tar xvfz ibex-2.8.9.tgz
+>> cd ibex-2.8.9
 >> ./waf configure --lp-lib=soplex
 >> sudo ./waf install
 
