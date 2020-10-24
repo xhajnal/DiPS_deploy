@@ -37,7 +37,7 @@ during installation simply continue with the default settings
 
 ### Install tkinter before building Python
 to enable bz2 library please run the following command:
->> sudo apt-get install ./libbz2-dev_1.0.6-8.1ubuntu0.2_amd64.deb
+>> sudo dpkg -i ./libbz2-dev_1.0.6-8.1ubuntu0.2_amd64.deb
 
 
 ### Install python 3.7
