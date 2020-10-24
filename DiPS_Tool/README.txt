@@ -139,7 +139,7 @@ These input files can be found along with the input files for 2 bees, 'DiPS/mode
 
 
 ## MORE EXAMPLES
-We provide you with two more examples, 'parametric_die' and 'TBD'.
+We provide you with two more examples, 'parametric_die' and 'crowds'.
 Files locations and the procedure is the same.
 (Note:) When loading other models, please fix the values of constants in the model before running synthesis. We apologise for this inconvenience. 
 (Note:) When using Rewards properties, please compute data intervals for these properties manually. 
