@@ -26,7 +26,7 @@ copy the package and unwrap it in the desired location, e.g. home
 Now, please, open the command line the location of the unwrapped package
 
 
-### Install tkinter before building Python
+### Install tkinter prerequisities before building Python
 tkinter is a bit problematic to install withouth Internet, please run:
 >> cd tkinter
 >> tar -xf ActiveTcl-8.6.9.tar.gz
@@ -36,24 +36,26 @@ during installation simply continue with the default settings
 
 
 ### Install packages
->> cd packages
+>> cd ../packages
 >> sudo dpkg -i *.deb
 
 
 ### Install python 3.7
 
-As the default python 3.8 has some difficulties running DiPS, please install Python 3.7.6 with the following commands:
+As the default python 3.8 has some difficulties running DiPS, please install Python 3.7.6 with the following commands (It will take a while):
 
 >> cd ..
 >> tar -xvzf Python-3.7.6.tgz
 >> cd Python-3.7.6
->> ./configure --with-tcltk-includes='-I/opt/ActiveTcl-8.6/include' --with-tcltk-libs='/opt/ActiveTcl-8.6/lib/libtcl8.6.so /opt/ActiveTcl-8.6/lib/libtk8.6.so' 
+(option 1 - faster build)
+>> ./configure --with-tcltk-includes='-I/opt/ActiveTcl-8.6/include' --with-tcltk-libs='/opt/ActiveTcl-8.6/lib/libtcl8.6.so /opt/ActiveTcl-8.6/lib/libtk8.6.so'
+(option 2 - faster run)
+>> ./configure --with-tcltk-includes='-I/opt/ActiveTcl-8.6/include' --with-tcltk-libs='/opt/ActiveTcl-8.6/lib/libtcl8.6.so /opt/ActiveTcl-8.6/lib/libtk8.6.so' --enable-optimizations
 >> make
 >> make test
 >> sudo make install
 
-This will take a while. 
-It will install this version as python3,
+It will install this version as python3.7,
 you can verify the installation using:
 >> python3.7 --version
 
@@ -70,6 +72,12 @@ Now, please install all necessary python packages
 >> cd ../python_packages
 >> for i in ./*.* ; do sudo pip3 install $i ; done
 
+(Note:) due to dependencies you will probably have to run the last command more times, or you can reinstall packages for which dependencies were about to be installed with the following command
+>> sudo pip3 install <insert the name of file for the respective package>
+
+We apologise for this inconvenience. 
+
+
 ### Setup z3 
 Now we setup z3 solver links
 >> cd ../z3
@@ -77,10 +85,6 @@ Now we setup z3 solver links
 >> export LD_LIBRARY_PATH=$MYZ3/bin:$LD_LIBRARY_PATH
 >> export PYTHONPATH=$MYZ3/bin/python
 
-(Note:) due to dependencies you will probably have to run the last command more times, or you can reinstall packages for which dependencies were about to be installed with the following command
->> sudo pip3 install <insert the name of file for the respective package>
-
-We apologise for this inconvenience. 
 
 
 ### Install PRISM
@@ -109,6 +113,7 @@ This allows DiPS to call PRISM.
 
 
 ## RUN DiPS Tool - GUI
+Before you run DiPS, please set your VM to fullscreen
 >> cd src
 >> python3.7 gui.py
 
