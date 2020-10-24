@@ -55,12 +55,12 @@ As the default python 3.8 has some difficulties running DiPS, please install Pyt
 This will take a while. 
 It will install this version as python3,
 you can verify the installation using:
->> python3 --version
+>> python3.7 --version
 
 with the expected result "Python 3.7.6"
 
 You can verify tkinter installation using:
->> python3
+>> python3.7
 >>> import tkinter
 >>> tkinter._test()
 
@@ -103,7 +103,7 @@ This allows DiPS to call PRISM.
 
 ## RUN DiPS Tool - GUI
 >> cd src
->> python3 gui.py
+>> python3.7 gui.py
 
 
 ## FIRST USE
