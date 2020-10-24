@@ -86,6 +86,13 @@ Now we setup z3 solver links
 >> export PYTHONPATH=$MYZ3/bin/python
 
 
+## Install dreal prerequisities
+>> cd ../Ibex
+>> tar xvfz ibex-2.8.8.tar.gz
+>> cd ibex-2.8.8
+>> ./waf configure --lp-lib=soplex
+>> sudo ./waf install
+
 
 ### Install PRISM
 The only necessary dependency of DiPS to complete the whole workflow is a probabilistic model checker.
