@@ -70,6 +70,13 @@ Now, please install all necessary python packages
 >> cd ../python_packages
 >> for i in ./*.* ; do sudo pip3 install $i ; done
 
+### Setup z3 
+Now we setup z3 solver links
+>> cd ../z3
+>> MYZ3="$PWD"
+>> export LD_LIBRARY_PATH=$MYZ3/bin:$LD_LIBRARY_PATH
+>> export PYTHONPATH=$MYZ3/bin/python
+
 (Note:) due to dependencies you will probably have to run the last command more times, or you can reinstall packages for which dependencies were about to be installed with the following command
 >> sudo pip3 install <insert the name of file for the respective package>
 
