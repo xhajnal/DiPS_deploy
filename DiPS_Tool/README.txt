@@ -35,6 +35,23 @@ tkinter is a bit problematic to install withouth Internet, please run:
 during installation simply continue with the default settings
 
 
+
+## Install dreal prerequisities
+>> unzip Ibex.zip
+>> cd ../Ibex
+>> tar xvfz ibex-2.8.9.tar
+>> cd ibex-2.8.9
+>> ./waf configure --lp-lib=soplex
+>> sudo ./waf install
+
+>> unzip Clp.zip
+>> cd ../Clp
+>> ./configure -C
+>> make
+>> make test
+>> make install
+
+
 ### Install packages
 >> cd ../packages
 >> sudo dpkg -i *.deb
@@ -84,14 +101,6 @@ Now we setup z3 solver links
 >> MYZ3="$PWD"
 >> export LD_LIBRARY_PATH=$MYZ3/bin:$LD_LIBRARY_PATH
 >> export PYTHONPATH=$MYZ3/bin/python
-
-
-## Install dreal prerequisities
->> cd ../Ibex
->> tar xvfz ibex-2.8.9.tgz
->> cd ibex-2.8.9
->> ./waf configure --lp-lib=soplex
->> sudo ./waf install
 
 
 ### Install PRISM
