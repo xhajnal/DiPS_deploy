@@ -44,12 +44,9 @@ during installation simply continue with the default settings
 >> ./waf configure --lp-lib=soplex
 >> sudo ./waf install
 
->> unzip Clp.zip
+>> tar -xvzf Clp2.tar.xz
 >> cd ../Clp
->> ./configure -C
->> make
->> make test
->> make install
+>> ./coinbrew build Clp
 
 
 ### Install packages
