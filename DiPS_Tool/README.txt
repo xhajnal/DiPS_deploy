@@ -35,20 +35,6 @@ tkinter is a bit problematic to install withouth Internet, please run:
 during installation simply continue with the default settings
 
 
-
-## Install dreal prerequisities
->> unzip Ibex.zip
->> cd ../Ibex
->> tar xvfz ibex-2.8.9.tar
->> cd ibex-2.8.9
->> ./waf configure --lp-lib=soplex
->> sudo ./waf install
-
->> tar -xvzf Clp2.tar.xz
->> cd ../Clp
->> ./coinbrew build Clp
-
-
 ### Install packages
 >> cd ../packages
 >> sudo dpkg -i *.deb
