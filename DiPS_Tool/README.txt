@@ -37,9 +37,8 @@ during installation simply continue with the default settings
 
 ### Install packages
 >> cd ../packages
-sudo apt install ./*.deb
-sudo apt-get install ./*.deb
->> sudo dpkg -i *.deb
+>> sudo apt install ./*.deb
+
 
 ## Unzip Dreal
 >> cd ..

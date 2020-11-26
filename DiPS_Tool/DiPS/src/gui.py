@@ -3901,7 +3901,10 @@ class Gui(Tk):
         sys.last_value = val
         sys.last_traceback = tb
         traceback.print_exception(exc, val, tb)
-        messagebox.showerror("Error", message=str(val))
+        try:
+            messagebox.showerror("Error", message=str(val))
+        except:
+            pass
         if "maximum recursion depth" in str(val):
             self.python_recursion_depth = self.python_recursion_depth + 1000
             sys.setrecursionlimit(self.python_recursion_depth)
@@ -3914,21 +3917,23 @@ class Gui(Tk):
             figure (figure): a figure to draw into the new window
             axes (axes): axes of the figure
         """
+
+        pyplt.rcParams['agg.path.chunksize'] = 1000000000
         new_plot_window = Toplevel(self)
-        new_plot_frame = Frame(new_plot_window)
-        new_plot_frame.pack(fill=BOTH, expand=True)
-
-        new_plot_canvas = FigureCanvasTkAgg(figure, master=new_plot_frame)
-        new_plot_toolbar = NavigationToolbar2Tk(new_plot_canvas, new_plot_frame)
-        new_plot_toolbar.update()
-        new_plot_canvas.get_tk_widget().pack(fill=BOTH, expand=True)
-
         try:
+            new_plot_frame = Frame(new_plot_window)
+            new_plot_frame.pack(fill=BOTH, expand=True)
+
+            new_plot_canvas = FigureCanvasTkAgg(figure, master=new_plot_frame)
+            new_plot_toolbar = NavigationToolbar2Tk(new_plot_canvas, new_plot_frame)
+            new_plot_toolbar.update()
+            new_plot_canvas.get_tk_widget().pack(fill=BOTH, expand=True)
+        
             new_plot_canvas.draw()
         except OverflowError as err:
-            pyplt.rcParams['agg.path.chunksize'] = 10000
-            new_plot_canvas.draw()
-            show_message(2, "Ploting window", err)
+            new_plot_window.destroy()
+            pass
+            # messagebox.showwarning("Ploting window", err)
 
         # canvas.flush_events()
         # self.new_window.update()
