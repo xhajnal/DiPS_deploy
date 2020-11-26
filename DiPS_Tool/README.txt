@@ -37,14 +37,19 @@ during installation simply continue with the default settings
 
 ### Install packages
 >> cd ../packages
+sudo apt install ./*.deb
+sudo apt-get install ./*.deb
 >> sudo dpkg -i *.deb
+
+## Unzip Dreal
+>> cd ..
+>> unzip dreal4.zip
 
 
 ### Install python 3.7
 
 As the default python 3.8 has some difficulties running DiPS, please install Python 3.7.6 with the following commands (It will take a while):
 
->> cd ..
 >> tar -xvzf Python-3.7.6.tgz
 >> cd Python-3.7.6
 (option 1 - faster build)
@@ -70,12 +75,7 @@ You can verify tkinter installation using:
 ### Install python packages
 Now, please install all necessary python packages
 >> cd ../python_packages
->> for i in ./*.* ; do sudo pip3 install $i ; done
-
-(Note:) due to dependencies you will probably have to run the last command more times, or you can reinstall packages for which dependencies were about to be installed with the following command
->> sudo pip3 install <insert the name of file for the respective package>
-
-We apologise for this inconvenience. 
+>> sudo pip3 install -r requirements.txt
 
 
 ### Setup z3 
