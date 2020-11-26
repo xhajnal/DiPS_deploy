@@ -75,6 +75,7 @@ You can verify tkinter installation using:
 ### Install python packages
 Now, please install all necessary python packages
 >> cd ../python_packages
+>> sudo pip3 install ./mpmath-1.1.0.tar.gz
 >> sudo pip3 install -r requirements.txt
 
 
