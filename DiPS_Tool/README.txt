@@ -82,8 +82,9 @@ Now, please install all necessary python packages
 Now we setup z3 solver links
 >> cd ../z3
 >> MYZ3="$PWD"
->> export LD_LIBRARY_PATH=$MYZ3/bin:$LD_LIBRARY_PATH
->> export PYTHONPATH=$MYZ3/bin/python
+>> echo export LD_LIBRARY_PATH=$MYZ3/bin:$LD_LIBRARY_PATH >> ~/.bashrc
+>> echo export PYTHONPATH=$MYZ3/bin/python >> ~/.bashrc
+>> source ~/.bashrc
 
 
 ### Install PRISM
