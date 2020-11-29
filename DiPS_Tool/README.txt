@@ -22,7 +22,7 @@ If you have problems, questions, ideas, or suggestions, please contact us.
 ## INSTALL
 
 ### Setting files
-copy the package and unwrap it in the desired location, e.g. home
+copy the package and unwrap it in /home/tacas21 
 Now, please, open the command line the location of the unwrapped package
 
 
@@ -51,12 +51,8 @@ As the default python 3.8 has some difficulties running DiPS, please install Pyt
 
 >> tar -xvzf Python-3.7.6.tgz
 >> cd Python-3.7.6
-(option 1 - faster build)
 >> ./configure --with-tcltk-includes='-I/opt/ActiveTcl-8.6/include' --with-tcltk-libs='/opt/ActiveTcl-8.6/lib/libtcl8.6.so /opt/ActiveTcl-8.6/lib/libtk8.6.so'
-(option 2 - faster run)
->> ./configure --with-tcltk-includes='-I/opt/ActiveTcl-8.6/include' --with-tcltk-libs='/opt/ActiveTcl-8.6/lib/libtcl8.6.so /opt/ActiveTcl-8.6/lib/libtk8.6.so' --enable-optimizations
 >> make
->> make test
 >> sudo make install
 
 It will install this version as python3.7,
@@ -100,14 +96,14 @@ Here we use the easiest option - PRISM. Please install PRISM with the following 
 (Note:) you don't need to operate PRISM, all calls and I/O will be provided by DiPS.
 
 
-### Setting DiPS config file
-edit config.ini in DiPS folder
+### Verify path to PRISM in the DiPS config file
+Open DiPS config file
 
 >> cd ../DiPS
 >> gedit config.ini
 
-and edit the location of the bin folder of PRISM in prism_path subsection, line 2, with the result similar to this:
-prism_path = /home/tacas21/prism-4.5-linux64/bin
+and check that in prism_path subsection, line 2, there is a correct path to PRISM bin folder:
+prism_path = /home/tacas21/DiPS_Tool/prism-4.5-linux64/bin
 
 This allows DiPS to call PRISM.
 
