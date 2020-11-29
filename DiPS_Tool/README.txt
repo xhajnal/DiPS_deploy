@@ -18,6 +18,8 @@ Visit the DiPS website for the latest information on how to contact or how to ci
 
 If you have problems, questions, ideas, or suggestions, please contact us.
 
+## HW requirements
+For fully functional GUI (all the features visible), please use a screen with resolution at least 1680x900 (HD+), recommended FullHD or higher, with maximised/fullscreen of VM and application, and set the scale of the screen to 100%.
 
 ## INSTALL
 
@@ -109,7 +111,11 @@ This allows DiPS to call PRISM.
 
 
 ## RUN DiPS Tool - GUI
-Before you run DiPS, please set your VM to fullscreen
+Before you run DiPS, for fully functional GUI (all the features visible), please
+1. use screen resolution at least HD+, preferably FullHD or higher,
+2. set your VM and the application window to fullscreen/maximised mode, and
+3. turn off screen scaling.
+
 >> cd src
 >> python3.7 gui.py
 
